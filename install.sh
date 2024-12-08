@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Install neovim
-sudo apt-get remove --purge vim -y
+sudo apt remove vim -y
 brew install neovim -y
 
 # Install tmux
-sudo apt-get install tmux -y
+sudo apt install tmux -y
 
 # Install eza
 sudo apt install eza  -y
@@ -15,7 +15,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 # Clone and setup dotfiles
 cd ~/
-git clone https://github.com/ItzNesbroDev/dotfiles ~/dotfiles
+git clone https://github.com/ItzNesbro/dotfiles ~/dotfiles
 mv ~/dotfiles/.config/nvim ~/.config/nvim
 rm -rf ~/.config/tmux
 mv ~/dotfiles/.config/tmux ~/.config/tmux
