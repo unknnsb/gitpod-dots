@@ -3,6 +3,7 @@
 # Install neovim
 sudo apt remove vim -y
 brew install neovim -y
+sudo ln -s $(which nvim) /usr/bin/vim
 
 # Install tmux
 sudo apt install tmux -y
