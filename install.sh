@@ -54,34 +54,26 @@ detect_package_manager() {
 }
 
 # Ensure the script runs with superuser privileges
-if [ "$EUID" -ne 0 ]; then
-  echo "Please run this script as root."
-  exit 1
-fi
 
 echo "Starting automated setup..."
 
 # Update and install prerequisites
 echo "Updating package list..."
-apt update -y && apt upgrade -y
+sudo apt update -y && apt upgrade -y
 
 # Install Neovim
 echo "Installing Neovim..."
-apt remove vim -y
-if ! command -v brew &>/dev/null; then
-  echo "Homebrew not found. Installing Homebrew..."
-  bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" </dev/null
-fi
-brew install neovim
+sudo apt remove vim -y
+sudo brew install neovim
 ln -sf "$(which nvim)" /usr/bin/vim
 
 # Install tmux
 echo "Installing tmux..."
-apt install tmux -y
+sudo apt install tmux -y
 
 # Install eza
 echo "Installing eza..."
-apt install eza -y
+sudo apt install eza -y
 
 # Install Oh My Zsh
 echo "Installing Oh My Zsh..."
@@ -145,14 +137,8 @@ fi
 
 # Source .zshrc
 echo "Sourcing .zshrc..."
-source ~/.zshrc
+source ~/.# Install Node.js and npm if not already installed
 
-# Install Node.js and npm if not already installed
-if ! command -v npm &>/dev/null; then
-  echo "Installing Node.js and npm..."
-  curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
-  apt install -y nodejs
-fi
 
 # Install czg and minimal-git-cz
 echo "Installing czg and minimal-git-cz..."
