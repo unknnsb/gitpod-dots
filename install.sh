@@ -95,7 +95,7 @@ fi
 echo "Cloning dotfiles repository..."
 DOTFILES_DIR="$HOME/dotfiles"
 if [ ! -d "$DOTFILES_DIR" ]; then
-  git clone https://github.com/ItzNesbro/dotfiles "$DOTFILES_DIR"
+  git clone https://github.com/unknnsb/dotfiles "$DOTFILES_DIR"
 else
   echo "Dotfiles repository already cloned."
 fi
