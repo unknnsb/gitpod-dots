@@ -64,8 +64,6 @@ sudo apt update -y && apt upgrade -y
 # Install Neovim
 echo "Installing Neovim..."
 sudo apt remove vim -y
-sudo brew install neovim
-ln -sf "$(which nvim)" /usr/bin/vim
 
 # Install tmux
 echo "Installing tmux..."
