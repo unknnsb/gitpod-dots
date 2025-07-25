@@ -59,7 +59,7 @@ echo "Starting automated setup..."
 
 # Update and install prerequisites
 echo "Updating package list..."
-sudo apt update -y && apt upgrade -y
+sudo apt update -y
 
 # Install Neovim
 echo "Installing Neovim..."
