@@ -69,10 +69,6 @@ sudo apt remove vim -y
 echo "Installing tmux..."
 sudo apt install tmux -y
 
-# Install eza
-echo "Installing eza..."
-sudo apt install eza -y
-
 # Install Oh My Zsh
 echo "Installing Oh My Zsh..."
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
@@ -95,6 +91,8 @@ mkdir -p ~/.config
 cp -r "$DOTFILES_DIR/.config/nvim" ~/.config/nvim
 rm -rf ~/.config/tmux
 cp -r "$DOTFILES_DIR/.config/tmux" ~/.config/tmux
+rm -rf ~/.gitconfig
+cp -r "$DOTFILES_DIR/.gitconfig" ~/.gitconfig
 
 # Update zshrc with aliases and plugins
 echo "Configuring .zshrc..."
